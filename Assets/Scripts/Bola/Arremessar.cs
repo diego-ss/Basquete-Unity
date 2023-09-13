@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class Arremessar : MonoBehaviour
 {
@@ -24,24 +23,13 @@ public class Arremessar : MonoBehaviour
     private float ajusteMiraX, ajusteMiraY;
     private float forca = 2.0f;
     private Vector2 startPos;
-
-    [SerializeField]
-    private float vidaBola = 1f;
-    [SerializeField]
-    private Color corOriginal;
-    [SerializeField]
-    private Renderer bolaRender;
-    [SerializeField]
-    private bool noChao = false;
+ 
 
     // Start is called before the first frame update
     void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
         this.circleCollider = GetComponent<CircleCollider2D>();
-        this.bolaRender = GetComponent<Renderer>();
-
-        corOriginal = bolaRender.material.GetColor("_Color");
 
         rb.isKinematic = true;
         circleCollider.enabled = false;
@@ -55,8 +43,7 @@ public class Arremessar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (noChao)
-            MatarBola();
+
     }
 
     private void FixedUpdate()
@@ -117,22 +104,5 @@ public class Arremessar : MonoBehaviour
             EscondeCaminho();
             rb.AddForce(PegaForca(Input.mousePosition));
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Chao"))
-            noChao = true;
-    }
-
-    void MatarBola()
-    {
-        if (vidaBola > 0)
-        {
-            vidaBola -= Time.deltaTime;
-            bolaRender.material.SetColor("_Color", new Color(corOriginal.r, corOriginal.g, corOriginal.b, vidaBola));
-        } 
-        else
-            Destroy(gameObject);
     }
 }
