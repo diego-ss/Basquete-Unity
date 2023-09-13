@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6955870746119718958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.13, y: -0.4, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.47167906, b: 0, a: 1}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: f2ad58f04331a0342abb9ffbef92593a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.09
+  m_Radius: 0.27
 --- !u!50 &6955870746119718953
 Rigidbody2D:
   serializedVersion: 4
@@ -138,7 +138,6 @@ MonoBehaviour:
   pontosTrajetoria: {fileID: 0}
   ajusteMiraX: -50
   ajusteMiraY: 50
-  bolaRender: {fileID: 0}
 --- !u!114 &3307748798732222136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,5 +170,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaBola: 1
   corOriginal: {r: 0, g: 0, b: 0, a: 0}
-  bolaRender: {fileID: 0}
+  bolaRender: {fileID: 6955870746119718955}
   noChao: 0
