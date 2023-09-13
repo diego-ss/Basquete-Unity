@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Arremessar : MonoBehaviour
 {
-
     public GameObject pontosTrajetoria;
     
     // components
@@ -104,5 +103,15 @@ public class Arremessar : MonoBehaviour
             EscondeCaminho();
             rb.AddForce(PegaForca(Input.mousePosition));
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        SetaBola.alvoInvisivel = true;
+    }
+
+    private void OnBecameVisible()
+    {
+        SetaBola.alvoInvisivel = false;
     }
 }
