@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SetaBola : MonoBehaviour
 {
-    public Transform alvo;
+    private Transform alvo;
     public Image seta;
 
     public static bool alvoInvisivel = false;
@@ -11,13 +11,16 @@ public class SetaBola : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        alvo = GameObject.FindGameObjectWithTag("Bola").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!alvoInvisivel)
+        if (GameManager.instance.bolaEmJogo && alvo == null)
+            alvo = GameObject.FindGameObjectWithTag("Bola").transform;
+
+        if (alvoInvisivel)
             SeguirBola();
         
         VisualizaSeta();
@@ -25,8 +28,6 @@ public class SetaBola : MonoBehaviour
 
     void SeguirBola()
     {
-        if (!alvo) return;
-
         Vector2 aux = seta.rectTransform.position;
         aux.x = alvo.position.x;
         seta.rectTransform.position = aux;

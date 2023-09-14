@@ -42,10 +42,12 @@ public class MatarBola : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.instance.bolaEmJogo = false;
-            GameManager.instance.numeroDeBolas--;
 
-            if (GameManager.instance != null && GameManager.instance.numeroDeBolas > 0)
+            if (GameManager.instance != null && GameManager.instance.numeroDeBolas > 0 && gameObject.tag == "Bola")
+            {
+                GameManager.instance.numeroDeBolas--;
                 GameManager.instance.GerarBola();
+            }
         }
     }
 }
