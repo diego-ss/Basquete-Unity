@@ -39,6 +39,13 @@ public class MatarBola : MonoBehaviour
             bolaRender.material.SetColor("_Color", new Color(corOriginal.r, corOriginal.g, corOriginal.b, vidaBola));
         }
         else
+        {
             Destroy(gameObject);
+            GameManager.instance.bolaEmJogo = false;
+            GameManager.instance.numeroDeBolas--;
+
+            if (GameManager.instance != null && GameManager.instance.numeroDeBolas > 0)
+                GameManager.instance.GerarBola();
+        }
     }
 }

@@ -33,6 +33,7 @@ public class Arremessar : MonoBehaviour
         rb.isKinematic = true;
         circleCollider.enabled = false;
         startPos = transform.position;
+        pontosTrajetoria = GameObject.FindGameObjectWithTag("PontosTrajetoria");
         caminho = pontosTrajetoria.transform.Cast<Transform>().ToList().ConvertAll(t => t.gameObject);    
     
         for (int i = 0; i < caminho.Count; i++)

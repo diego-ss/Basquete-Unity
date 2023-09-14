@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Chao
+  - LimiteEsquerda
+  - LimiteDireita
+  - LimiteSuperior
+  - LimiteInferior
+  - PontosTrajetoria
   layers:
   - Default
   - TransparentFX
